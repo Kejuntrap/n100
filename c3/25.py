@@ -27,4 +27,4 @@ for line in f:
             if len(tmpl) >= 2:
                 if tmpl[0].replace("|", "").replace(" ", "") != "":
                     countrydata[tmpl[0].replace("|", "").replace(" ", "")] = tmpl[1]
-        print(countrydata)
+        print(jl["title"]," : ",countrydata)

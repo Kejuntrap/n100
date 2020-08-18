@@ -1,5 +1,10 @@
-import pandas as pd
+import json
+import re   #regexp
 
-wiki = pd.read_json('jawiki-country.json', lines=True)
-for i in range(len(wiki)):
-    print(wiki['text'])
+f = open('jawiki-country.json', 'r')
+target = re.compile('\[\[Category:')
+
+for line in f:
+    jl = json.loads(line)
+    if target.search(jl['text']):
+        print(jl['text'])
