@@ -1,0 +1,1 @@
+paste -d " "  col[1-2].txt > merge.txt
