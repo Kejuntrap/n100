@@ -1,5 +1,5 @@
 import json
-import re   #regexp
+import re  # regexp
 
 f = open('jawiki-country.json', 'r')
 target = re.compile(u'イギリス')

@@ -1,5 +1,6 @@
 import json
 import re  # regexp
+
 import requests
 
 f = open('jawiki-country.json', 'r')
@@ -39,5 +40,3 @@ for line in f:
                 " ", "_")
             response = requests.get(url)
             print(response.text)
-
-

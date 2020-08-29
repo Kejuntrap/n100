@@ -1,9 +1,8 @@
 import json
-import re   #regexp
+import re  # regexp
 
 f = open('jawiki-country.json', 'r')
 lv = re.compile('^=+.*=+$')
-
 
 for line in f:
 

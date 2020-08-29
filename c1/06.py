@@ -1,10 +1,9 @@
-
 def makebigram(s):
-  returnset = set()
-  for i in range(len(s) - 1):
-    returnset.add(s[i:i + 2])
-  return returnset
-    
+    returnset = set()
+    for i in range(len(s) - 1):
+        returnset.add(s[i:i + 2])
+    return returnset
+
 
 str1 = "paraparaparadise"
 str2 = "paragraph"
