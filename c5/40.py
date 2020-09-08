@@ -29,8 +29,18 @@ def loaddics(fl):
     return res
 
 
+def output(dic):
+    for i in range(len(dic)):
+        print("size:",len(dic[i]))
+        for j in range(len(dic[i])):
+            print("表層系:", Morph(dic[i][j]).surface, "\t基本形:", Morph(dic[i][j]).base, "\t品詞:", Morph(dic[i][j]).pos,
+                  "\t品詞細分類:", Morph(dic[i][j]).pos1)
+        print()
+
+
 f = open("ai.ja.txt.parsed", 'r', encoding='UTF-8')
 t = loaddics(f)
+output(t)
 print(t[0][0])
 
 print(Morph(t[0][0]).base)
