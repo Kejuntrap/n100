@@ -9,6 +9,9 @@ class Morph:
         self.base = r[7]
         self.pos = r[1]
         self.pos1 = r[2]
+    def show(self):
+        print("表層系:", self.surface, "\t基本形:", self.base, "\t品詞:", self.pos,
+              "\t品詞細分類:", self.pos1)
 
 
 def loaddics(fl):
@@ -33,14 +36,9 @@ def output(dic):
     for i in range(len(dic)):
         print("size:",len(dic[i]))
         for j in range(len(dic[i])):
-            print("表層系:", Morph(dic[i][j]).surface, "\t基本形:", Morph(dic[i][j]).base, "\t品詞:", Morph(dic[i][j]).pos,
-                  "\t品詞細分類:", Morph(dic[i][j]).pos1)
-        print()
+            Morph.show(Morph(dic[i][j]))
 
 
 f = open("ai.ja.txt.parsed", 'r', encoding='UTF-8')
 t = loaddics(f)
 output(t)
-print(t[0][0])
-
-print(Morph(t[0][0]).base)
