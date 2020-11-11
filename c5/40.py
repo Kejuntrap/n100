@@ -9,6 +9,7 @@ class Morph:
         self.base = r[7]
         self.pos = r[1]
         self.pos1 = r[2]
+
     def show(self):
         print("表層系:", self.surface, "\t基本形:", self.base, "\t品詞:", self.pos,
               "\t品詞細分類:", self.pos1)
@@ -34,7 +35,7 @@ def loaddics(fl):
 
 def output(dic):
     for i in range(len(dic)):
-        print("size:",len(dic[i]))
+        print("size:", len(dic[i]))
         for j in range(len(dic[i])):
             Morph.show(Morph(dic[i][j]))
 

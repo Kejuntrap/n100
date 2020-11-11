@@ -94,4 +94,4 @@ def graph(res, name, idx):
 f = open("ai.ja.txt.parsed", 'r', encoding='UTF-8')
 text = f.read().split("\n")
 res = kakariuke(text)
-graph(res, "AI", 1)
+# graph(res,"AI",1)
