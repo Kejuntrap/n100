@@ -7,3 +7,6 @@
 /c2/popular-names.txt
 /c5/ai.ja.txt.parsed
 /c5/ai.ja.txt
+/c5/*.png
+/c5/*.pdf
+/c5/*.gv
