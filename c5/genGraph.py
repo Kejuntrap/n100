@@ -1,16 +1,18 @@
 from graphviz import Digraph
 from graphviz import Graph
 
+
+
 dict = []
 g = Graph(format='pdf')
 dg = Digraph(format='pdf')
-
+dg.attr('node', shape='box', fontname='MS Gothic')
 
 # graphizのdotファイルからグラフを作成
 # コマンドラインからでも作れるようにしたかったけどそこまでの需要がなかった
 
 def loadfile(name):
-    f = open(name)
+    f = open(name,encoding="utf-8")
     cont = f.readlines()
     for i in range(len(cont)):
         cont[i] = cont[i].strip('\n')

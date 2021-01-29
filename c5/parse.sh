@@ -1,3 +1,3 @@
-echo parse file name?:
-read str
-cabocha $str -f1 > $str.parsed
+echo parse file name
+read strs
+cabocha $strs -f1 > $strs.parsed

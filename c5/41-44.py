@@ -47,17 +47,20 @@ def kakariuke(text):
             if not isEOS:
                 paragraphchunks.append(struct)
                 sectionparagraphs.append(paragraphchunks)
-                # readparagraph(sectionparagraphs[len(sectionparagraphs) - 1])
+                readparagraph(sectionparagraphs[len(sectionparagraphs) - 1])
                 paragraphchunks = []
                 struct = Chunk()
                 isEOS = True
         else:
             isEOS = False
-            if line[0] == '*':  # Chunkの句切れ
+            if len(line)==0 or line[0] == '\t' or line[0] == '\r':
+                continue
+            elif line[0] == '*':  # Chunkの句切れ
                 paragraphchunks.append(struct)
                 struct = Chunk()
                 struct.id = int(line.split(" ")[1])
                 struct.dst = int(line.split(" ")[2][:-1])
+
             else:
                 struct.morphs.append(line.split("\t")[0])
 
@@ -91,7 +94,7 @@ def graph(res, name, idx):
     print("}")
 
 
-f = open("ai.ja.txt.parsed", 'r', encoding='UTF-8')
+f = open("sample.txt.parsed", 'r', encoding='UTF-8')
 text = f.read().split("\n")
 res = kakariuke(text)
 
