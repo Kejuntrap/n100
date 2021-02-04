@@ -29,6 +29,13 @@ class Chunk:
         self.srcs = []
         self.id = -1
 
+def readparagraph(a):  # パラグラフを読む
+    source = ""
+    for i in range(len(a)):
+        for j in range(len(a[i].morphs)):
+            source += a[i].morphs[j]
+    print(source)
+
 
 def kakariuke(text):
     struct = Chunk()
